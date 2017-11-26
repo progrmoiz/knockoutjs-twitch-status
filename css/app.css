@@ -1,0 +1,8 @@
+.twitch {
+  margin: 160px auto 60px auto;
+  width: 550px;
+}
+
+.twitch__list {
+  list-style: none;
+}
