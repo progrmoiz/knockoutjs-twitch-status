@@ -27,23 +27,17 @@ function TwitchViewModel() {
 
   // All Filters
   self.noFilter = function() {
-    // no need to remove all items
-    self.filteredData(self.playersData());
-    self.currentTab('all');
+    location.hash = 'all';
   };
 
   // Online Filters
   self.onlineFilter = function() {
-    const filter = self.playersData().filter(player => player.status == 'online');
-    self.filteredData(filter);
-    self.currentTab('online');
+    location.hash = 'online';
   };
 
   // Offline Filter
   self.offlineFilter = function() {
-    const filter = self.playersData().filter(player => player.status == 'offline');
-    self.filteredData(filter);
-    self.currentTab('offline');
+    location.hash = 'offline';
   };
 
   // add selected class
@@ -71,7 +65,8 @@ function TwitchViewModel() {
         self.offlineFilter();
         break;
       default:
-        self.noFilter()
+        self.noFilter();
+        self.filteredData(self.playersData());
         break;
     };
     const filter = self.filteredData().filter(player => {
@@ -79,6 +74,22 @@ function TwitchViewModel() {
     });
     self.filteredData(filter);
   }, self);
+
+  // Client-side routes
+  Sammy(function() {
+    this.get('#:filter', function() {
+      const f = this.params.filter.toLowerCase();
+      if (f === 'all') {
+        self.filteredData(self.playersData())
+      } else {
+        const filter = self.playersData().filter(player => player.status === f);
+        self.filteredData(filter);
+      }
+      self.currentTab(f);
+    })
+
+    this.get('', function() { this.app.runRoute('get', '#all') });
+  }).run();
 
   (function() {
     Promise
