@@ -12,7 +12,7 @@ See a live version here: http://twitch-status.progrmoiz.surge.sh
 ## Clone the repo
 It is very light weight repo, So recommended starting with cloning the repo
 ```
-git clone https://github.com/progrmoiz/simple-weather-webapp.git
+git clone https://github.com/progrmoiz/knockoutjs-twitch-status.git
 ```
 
 ## Running the site
