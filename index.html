@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Twitch Status</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__heading">twitch status</h1>
+    </header>
+
+
+    <section id="twitch-status" class="twitch">
+      <header class="twitch__header">
+        <input data-bind="value: query, valueUpdate: 'keyup'" type="text" id="filter" name="filter" class="twitch__input" placeholder="Search Player...">
+      </header>
+
+      <section class="twitch__section">
+        <ul class="twitch__list" data-bind="foreach: filteredData">
+          <li class="player twitch__player">
+            <div class="level-left">
+              <span data-bind="css: `player__status--${status}`" class="player__status"></span>
+              <span class="player__thumbnail"><img data-bind="attr: {
+                'src': logo,
+                'alt': displayName
+              }" class="player__image" width="50" height="50"></span>
+            </div>
+            <div class="level-right">
+              <span class="player__title"><a data-bind="text: displayName, attr: {
+                href: url,
+                title: displayName
+              }"></a></span>
+              <span class="player__subtitle" data-bind="text: streaming"></span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <footer class="twitch__footer">
+        <a data-bind="click: noFilter, css: currentTabSelectedAll" href="#" class="twitch__filter-btn twitch__filter-btn--mode_none">All</a>
+        <a data-bind="click: onlineFilter, css: currentTabSelectedOnline" href="#" class="twitch__filter-btn twitch__filter-btn--mode_online">Online</a>
+        <a data-bind="click: offlineFilter, css: currentTabSelectedOffline" href="#" class="twitch__filter-btn twitch__filter-btn--mode_offline">Offline</a>
+      </footer>
+    </section>
+
+    <footer class="footer">
+      <p>Credit: <a href="https://github.com/progrmoiz">Abdul Moiz</a></p>
+      <p>Built with: <a href="http://knockoutjs.com/">Knockout</a>, <a href="sammyjs.org">Sammy.js</a></p>
+    </footer>
+
+    <script type="text/javascript" src="js/lib/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/knockout-3.4.2.js"></script>
+    <script type="text/javascript" src="js/lib/sammy-latest.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>

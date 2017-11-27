@@ -1,0 +1,185 @@
+@import reset
+@import vars
+
+body
+  font-family: $section_font_family
+  font-size: $section_font_size
+  line-height: $section_line_height
+  -webkit-font-smoothing: antialiased
+  -moz-font-smoothing: antialiased
+  font-smoothing: antialiased
+  background: #f5f5f5
+
+.header
+  width: 550px
+  margin: 0 auto
+  padding: 90px 0 0
+  text-align: center
+  color: rgba($primary_color, 0.5)
+
+  &__heading
+    font-size: 4em
+
+.footer
+  width: 550px
+  margin: 40px auto 40px
+  color: #bfbfbf
+  font-size: 0.7em
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5)
+  text-align: center
+
+  p
+    line-height: 1
+    margin: 1em 0
+
+  a
+    color: inherit
+    text-decoration: none
+    font-weight: 400
+
+    &:hover
+      text-decoration: underline
+
+/* global
+
+*
+  box-sizing: border-box
+
+/* Twitch Section
+.twitch
+  margin: $margin_top auto $margin_bottom auto
+  width: 550px
+  background: $section_background
+  border-radius: $section_radius
+  box-shadow: 0px 1px 3px 0px #9E9E9E
+
+  &__header
+    border-top-left-radius: $section_radius
+    border-top-right-radius: $section_radius
+
+  &__input
+    width: 100%
+    height: 50px
+    border: 0
+    font-size: 1.2em
+    padding: 5px 10px
+    line-height: 1.2em
+    outline: 0
+    background: rgba(#000, 0.1)
+    border-top-left-radius: $section_radius
+    border-top-right-radius: $section_radius
+    color: $white_color
+    font-family: $section_font_family
+
+    &::placeholder
+      color: rgba(#fff, 0.1)
+
+  &__list
+    list-style: none
+
+    &:last-child
+      // border-color: transparent
+
+  &__footer
+    height: 40px
+    background: rgba(#fff, 0.1)
+    padding-top: 10px
+    text-align: center
+    border-bottom-left-radius: $section_radius
+    border-bottom-right-radius: $section_radius
+
+  &__filter-btn
+    text-decoration: none
+    line-height: 1.2em
+    border: 1px solid #272d2d
+    border-radius: 2px
+    padding: 2px 5px
+    margin-right: 5px
+    font-size: 0.7em
+    color: #272d2d
+    text-transform: uppercase
+
+    &::before
+      content: ""
+      width: 5px
+      height: 5px
+      display: inline-block
+      background: #272d2d
+      border-radius: 100px
+      margin: 2px 5px 2px 0
+
+    &--mode_none
+      &::before
+        display: none
+
+    &--mode_online
+      &::before
+        background: #1dcf72
+
+    &--mode_offline
+      &::before
+        background: #003151
+
+    &--selected
+      background: #272d2d
+      color: #f6f8ff
+
+  &__player
+    border-bottom: 1px solid rgba(#000, 0.1)
+
+  .player
+    height: 70px
+    padding: 10px
+
+    &__title
+      font-size: 1.2em
+      line-height: 1.2em
+      display: block
+      color: $white_color
+
+      a
+        color: $white_color
+        text-decoration: none
+
+    &__subtitle
+      font-size: 0.8em
+      line-height: 1.2em
+      display: block
+      color: $white_color
+
+      a
+        color: $white_color
+        text-decoration: none
+
+    &__status
+      width: 10px
+      height: 10px
+      display: inline-block
+      border-radius: 100px
+      vertical-align: middle
+      background: #272d2d
+      margin-right: 5px
+
+      &--online
+        background: #1dcf72
+
+      &--offline
+        background: #003151
+
+    &__thumbnail
+      display: inline-block
+      vertical-align: middle
+      margin-right: 5px
+
+    &__image
+      border-radius: 100px
+
+/* Level
+.level
+  &-right
+    vertical-align: middle
+    display: inline-block
+
+  &-left
+    vertical-align: middle
+    display: inline-block
