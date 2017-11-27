@@ -13,43 +13,42 @@
 
     <section id="twitch-status" class="twitch">
       <header class="twitch__header">
-        <input type="text" id="filter" name="filter" class="twitch__input" placeholder="Search Player...">
+        <input data-bind="value: query, valueUpdate: 'keyup'" type="text" id="filter" name="filter" class="twitch__input" placeholder="Search Player...">
       </header>
 
       <section class="twitch__section">
-        <ul class="twitch__list">
+        <ul class="twitch__list" data-bind="foreach: filteredData">
           <li class="player twitch__player">
             <div class="level-left">
-              <span class="player__status player__status--online"></span>
-              <span class="player__thumbnail"><img class="player__image" src="images/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg" alt="Logo" width="50" height="50"></span>
+              <span data-bind="css: `player__status--${status}`" class="player__status"></span>
+              <span class="player__thumbnail"><img data-bind="attr: {
+                'src': logo,
+                'alt': displayName
+              }" class="player__image" width="50" height="50"></span>
             </div>
             <div class="level-right">
-              <span class="player__title"><a href="#">ESL_SC2</a></span>
-              <span class="player__subtitle"><a href="#">RERUN: Patience vs. StarNaN - EU Qualifier Stage 1 - IEM Cologne - StarCraft 2</a></span>
-            </div>
-          </li>
-          <li class="player twitch__player">
-            <div class="level-left">
-              <span class="player__status player__status--offline"></span>
-              <span class="player__thumbnail"><img class="player__image" src="images/14d203c57cf935bf-profile_image-300x300.png" alt="Logo" width="50" height="50"></span>
-            </div>
-            <div class="level-right">
-              <span class="player__title"><a href="#">wintergaming</a></span>
-              <span class="player__subtitle">Offline</span>
+              <span class="player__title"><a data-bind="text: displayName, attr: {
+                href: url,
+                title: displayName
+              }"></a></span>
+              <span class="player__subtitle" data-bind="text: streaming"></span>
             </div>
           </li>
         </ul>
       </section>
 
       <footer class="twitch__footer">
-        <a href="#" class="twitch__filter-btn twitch__filter-btn--selected twitch__filter-btn--mode_none">All</a>
-        <a href="#" class="twitch__filter-btn twitch__filter-btn--mode_online">Online</a>
-        <a href="#" class="twitch__filter-btn twitch__filter-btn--mode_offline">Offline</a>
+        <a data-bind="click: noFilter, css: currentTabSelectedAll" href="#" class="twitch__filter-btn twitch__filter-btn--mode_none">All</a>
+        <a data-bind="click: onlineFilter, css: currentTabSelectedOnline" href="#" class="twitch__filter-btn twitch__filter-btn--mode_online">Online</a>
+        <a data-bind="click: offlineFilter, css: currentTabSelectedOffline" href="#" class="twitch__filter-btn twitch__filter-btn--mode_offline">Offline</a>
       </footer>
     </section>
 
     <footer class="footer">
 
     </footer>
+
+    <script type="text/javascript" src="js/lib/knockout-3.4.2.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
   </body>
 </html>
