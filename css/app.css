@@ -1,0 +1,185 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain) */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  background: #f5f5f5; }
+
+.header {
+  width: 550px;
+  margin: 0 auto;
+  padding: 90px 0 0;
+  text-align: center;
+  color: rgba(100, 65, 164, 0.5); }
+  .header__heading {
+    font-size: 4em; }
+
+.footer {
+  width: 550px;
+  margin: 40px auto 40px;
+  color: #bfbfbf;
+  font-size: 0.7em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  text-align: center; }
+  .footer p {
+    line-height: 1;
+    margin: 1em 0; }
+  .footer a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 400; }
+    .footer a:hover {
+      text-decoration: underline; }
+
+/* global */
+* {
+  box-sizing: border-box; }
+
+/* Twitch Section */
+.twitch {
+  margin: 100px auto 40px auto;
+  width: 550px;
+  background: #6441a4;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px 0px #9E9E9E; }
+  .twitch__header {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px; }
+  .twitch__input {
+    width: 100%;
+    height: 50px;
+    border: 0;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    line-height: 1.2em;
+    outline: 0;
+    background: rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #f6f8ff;
+    font-family: "PT Sans", sans-serif; }
+    .twitch__input::placeholder {
+      color: rgba(255, 255, 255, 0.1); }
+  .twitch__list {
+    list-style: none; }
+  .twitch__footer {
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; }
+  .twitch__filter-btn {
+    text-decoration: none;
+    line-height: 1.2em;
+    border: 1px solid #272d2d;
+    border-radius: 2px;
+    padding: 2px 5px;
+    margin-right: 5px;
+    font-size: 0.7em;
+    color: #272d2d;
+    text-transform: uppercase; }
+    .twitch__filter-btn::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      display: inline-block;
+      background: #272d2d;
+      border-radius: 100px;
+      margin: 2px 5px 2px 0; }
+    .twitch__filter-btn--mode_none::before {
+      display: none; }
+    .twitch__filter-btn--mode_online::before {
+      background: #1dcf72; }
+    .twitch__filter-btn--mode_offline::before {
+      background: #003151; }
+    .twitch__filter-btn--selected {
+      background: #272d2d;
+      color: #f6f8ff; }
+  .twitch__player {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  .twitch .player {
+    height: 70px;
+    padding: 10px; }
+    .twitch .player__title {
+      font-size: 1.2em;
+      line-height: 1.2em;
+      display: block;
+      color: #f6f8ff; }
+      .twitch .player__title a {
+        color: #f6f8ff;
+        text-decoration: none; }
+    .twitch .player__subtitle {
+      font-size: 0.8em;
+      line-height: 1.2em;
+      display: block;
+      color: #f6f8ff; }
+      .twitch .player__subtitle a {
+        color: #f6f8ff;
+        text-decoration: none; }
+    .twitch .player__status {
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      border-radius: 100px;
+      vertical-align: middle;
+      background: #272d2d;
+      margin-right: 5px; }
+      .twitch .player__status--online {
+        background: #1dcf72; }
+      .twitch .player__status--offline {
+        background: #003151; }
+    .twitch .player__thumbnail {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px; }
+    .twitch .player__image {
+      border-radius: 100px; }
+
+/* Level */
+.level-right {
+  vertical-align: middle;
+  display: inline-block; }
+.level-left {
+  vertical-align: middle;
+  display: inline-block; }
+
+/*# sourceMappingURL=app.css.map */
